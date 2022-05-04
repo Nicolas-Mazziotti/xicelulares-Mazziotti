@@ -1,6 +1,8 @@
 import React from 'react'
 import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget';
 import InstallMobileIcon from '@mui/icons-material/InstallMobile';
+
 
 
 export const NavBar = () => {
@@ -18,6 +20,9 @@ export const NavBar = () => {
             <a href='#'><li>Accesorios</li></a>
             <a href='#'><li>About Us</li></a>
         </ul>
+        <div className='NavbarCart'>
+        <CartWidget/>
+        </div>
     </nav>
   )
 }
