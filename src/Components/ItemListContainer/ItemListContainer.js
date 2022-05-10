@@ -1,12 +1,20 @@
-
 import React from 'react'
+import { ItemCount } from '../ItemCount/ItemCount'
 
 const ItemListContainer = ({greeting}) => {
-    console.log()
+  
+  const addToCart = () =>{
+    console.log("Se ha agregado al carrito")
+}
   return (
-    <div>
+    <>
         <h1>{greeting}</h1>
-    </div>
+        <ItemCount 
+        initial={1}
+        stock= "5"
+        onAdd={addToCart}
+        />
+    </>
   )
 }
 

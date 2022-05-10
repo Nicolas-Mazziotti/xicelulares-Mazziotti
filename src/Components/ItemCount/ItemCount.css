@@ -1,0 +1,27 @@
+.countContainer{
+    width: 250px;
+    height: 250px;
+    border: solid;
+    margin: auto;
+    padding-top: 4rem;
+}
+
+.btnCount{
+    margin: auto;
+    height: auto;
+    cursor: pointer;
+    background-color: royalblue;
+    color: white;
+}
+
+.btnAdd{
+    width: auto;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    
+}
