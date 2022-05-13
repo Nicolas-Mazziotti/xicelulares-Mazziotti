@@ -4,7 +4,9 @@ import  NavBar  from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 
 
-function App() {
+
+
+function App({}) {
   return (
     <div className="App">
      <NavBar/>

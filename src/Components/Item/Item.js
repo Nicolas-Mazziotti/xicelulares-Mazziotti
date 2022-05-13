@@ -5,6 +5,7 @@ export const Item = ({product}) => {
   return (
     <div>
         <p>{product.modelo}</p>
+        <span>{product.precio}</span>
     </div>
   )
 }

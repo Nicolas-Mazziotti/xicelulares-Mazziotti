@@ -4,24 +4,16 @@
     border: solid;
     margin: auto;
     padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.btnCount{
-    margin: auto;
-    height: auto;
-    cursor: pointer;
-    background-color: royalblue;
-    color: white;
+.countCantidad{
+    display: flex;
+    justify-content: center;
+    padding: 0.3rem;
 }
 
-.btnAdd{
-    width: auto;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    background-color: royalblue;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    
-    
+.btnCantidad{
+    margin: 1rem;
 }

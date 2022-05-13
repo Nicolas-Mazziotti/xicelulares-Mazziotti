@@ -6,9 +6,9 @@ import { ItemList } from '../ItemList/ItemList'
 const ItemListContainer = ({greeting}) => {
 
   const [products, setProducts] = useState ([])
-  
-  const addToCart = () =>{
-    console.log("Se ha agregado al carrito")
+
+const onAdd = (cantidad) => {
+  alert (`Productos agregados ${cantidad}`)
 }
 
 useEffect(() => {
@@ -25,7 +25,6 @@ useEffect(() => {
           console.log(error)
 
       })
-
 }, []);
 
   return (
@@ -33,8 +32,8 @@ useEffect(() => {
         <h1>{greeting}</h1>
         <ItemCount 
         initial={1}
-        stock= "5"
-        onAdd={addToCart}
+        stock= {5}
+        onAdd={onAdd}
         />
         <ItemList product= {products} />
     </>
