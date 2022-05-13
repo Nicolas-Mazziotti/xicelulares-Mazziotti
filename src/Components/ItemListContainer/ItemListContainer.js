@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import  {React, useState, useEffect} from 'react'
 import { ItemCount } from '../ItemCount/ItemCount'
 import ProductsData from '../ProductsData/ProductsData'
 import { ItemList } from '../ItemList/ItemList'
@@ -30,12 +30,12 @@ useEffect(() => {
   return (
     <>
         <h1>{greeting}</h1>
+        <ItemList productos= {products} />
         <ItemCount 
         initial={1}
         stock= {5}
         onAdd={onAdd}
         />
-        <ItemList product= {products} />
     </>
   )
 }
