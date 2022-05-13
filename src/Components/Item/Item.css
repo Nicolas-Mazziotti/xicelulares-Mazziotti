@@ -1,3 +1,5 @@
 .item{
     padding: 2rem;
+    border: solid gray;
+    margin: 2rem;
 }

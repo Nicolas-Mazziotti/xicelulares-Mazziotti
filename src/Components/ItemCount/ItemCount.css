@@ -1,7 +1,7 @@
 .countContainer{
     width: 250px;
     height: 250px;
-    border: solid;
+    border: solid gray;
     margin: auto;
     padding-top: 4rem;
     display: flex;
