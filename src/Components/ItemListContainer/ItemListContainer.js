@@ -1,12 +1,12 @@
 import  {React, useState, useEffect} from 'react'
-import { ItemCount } from '../ItemCount/ItemCount'
-import ProductsData from '../ProductsData/ProductsData'
-import { ItemList } from '../ItemList/ItemList'
+import  ItemCount from '../ItemCount/ItemCount'
+import {ProductsData} from '../ProductsData/ProductsData'
+import  ItemList  from '../ItemList/ItemList'
 
 const ItemListContainer = ({greeting}) => {
 
-  const [products, setProducts] = useState ([])
-
+    
+const [products, setProducts] = useState ([]) // Almaceno la informacion que devuelve la promise en este estado
 const onAdd = (cantidad) => {
   alert (`Productos agregados ${cantidad}`)
 }
@@ -25,12 +25,13 @@ useEffect(() => {
           console.log(error)
 
       })
-}, []);
+},[]); // para que se ejecute una vez sino realiza un ejecuteo infinito , se ponen estados o props
 
   return (
+    // en ItemList le paso por props los products que guardamos en el estado(prop= productos data a consumir= products)
     <>
         <h1>{greeting}</h1>
-        <ItemList productos= {products} />
+        <ItemList productos= {products} /> 
         <ItemCount 
         initial={1}
         stock= {5}
