@@ -1,12 +1,13 @@
 import React from 'react'
-import { Item } from '../Item/Item'
+import Item from '../Item/Item'
 import './ItemList.css'
+import {Link} from 'react-router-dom'
 
-
-export const ItemList = ({productos}) => { // productos = prop que le pase en ItemListContainer para consumir la data
+ const ItemList = ({productos}) => { // productos = prop que le pase en ItemListContainer para consumir la data
   return (
     <div className='itemContainer'>
-        {productos.map((prod) => <Item key={prod.id} products={prod}/>            
+        {productos.map((prod) => 
+        <Item key={prod.id} products={prod}/>            
         )}
     </div>
   )

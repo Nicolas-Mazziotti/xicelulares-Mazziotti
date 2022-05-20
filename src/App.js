@@ -1,20 +1,33 @@
 import React from 'react';
 import './App.css';
+
+//Componentes
 import  NavBar  from './Components/NavBar/NavBar';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
-import  ItemDetailContainer  from './Components/ItemDetailContainer/ItemDetailContainer';
+import  ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import Home from './Views/Home/Home'
+//Dependencias
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Celulares from './Views/Home/Celulares/Celulares';
+import Accesorios from './Views/Home/Accesorios/Accesorios';
 
 
-
-
-function App({}) {
+const App = () => {
   return (
-    <div className="App">
-     <NavBar/>
-     <ItemListContainer greeting="Tienda Virtual Xi Celulares"/>
-     <ItemDetailContainer/>
+    <Router>
+      <div className="App">
+      <NavBar/>
+      <Routes>
+          <Route path="/" element ={<Home/>}/>
+          <Route path="/celulares" element ={<Celulares/>}/>
+          <Route path="/accesorios" element ={<Accesorios/>}/>
+          {/* Ruta dinamica */}
+          <Route path="/detail/:id" element ={<ItemDetailContainer/>}/>  
 
-    </div>
+          
+      </Routes>
+      </div>
+    </Router>
+
   );
 }
 

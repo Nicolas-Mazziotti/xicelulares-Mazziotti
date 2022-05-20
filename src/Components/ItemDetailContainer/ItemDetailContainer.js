@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import "./ItemDetailContainer.css"
 import { ProductsData } from '../ProductsData/ProductsData'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
+import { useParams } from 'react-router-dom'
 
-export const ItemDetailContainer = () => {
+const ItemDetailContainer = () => {
+    let id = useParams(); {/* con useParams obtengo los id de mis products*/}
+    console.log(id)
+
     const [items, setItems] = useState ([])
     console.log(items)
 

@@ -2,23 +2,21 @@ import React from 'react'
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget';
 import InstallMobileIcon from '@mui/icons-material/InstallMobile';
+import { Link } from 'react-router-dom';
 
 
 
-export const NavBar = () => {
+ const NavBar = () => {
   return (
     <nav className='NavbarContainer'>
         <div className="icon">
-        <InstallMobileIcon
-            fontSize="large"    
-            />
-        <p className='NavbarIcontext'>Xi Celulares</p>
-
+          <InstallMobileIcon fontSize="large"/>
+          <p className='NavbarIcontext'>Xi Celulares</p>
         </div>        
         <ul className='NavbarList'>
-            <a href='#'><li>Celulares</li></a>
-            <a href='#'><li>Accesorios</li></a>
-            <a href='#'><li>About Us</li></a>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/celulares"><li>Celulares</li></Link>
+            <Link to="/accesorios"><li>Accesorios</li></Link>
         </ul>
         <div className='NavbarCart'>
         <CartWidget/>
