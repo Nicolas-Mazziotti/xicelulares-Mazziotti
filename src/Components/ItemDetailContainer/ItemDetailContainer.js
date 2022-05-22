@@ -1,39 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import "./ItemDetailContainer.css"
-import { ProductsData } from '../ProductsData/ProductsData'
-import { ItemDetail } from '../ItemDetail/ItemDetail'
+import { productosDetail, ProductsData } from '../ProductsData/ProductsData'
+import ItemDetail  from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
 const ItemDetailContainer = () => {
-    let id = useParams(); {/* con useParams obtengo los id de mis products*/}
+
+    //  con useParams obtengo los id de mis products
+    let id = useParams(); 
     console.log(id)
 
-    const [items, setItems] = useState ([])
-    console.log(items)
+    const [product, setProduct] = useState ({}) //guardo en objeto para mostrar solo un producto en el detalle
+    console.log(product + "Item detail")
 
     useEffect(() =>{
-        const newItem = new Promise ((resolve, reject) => {
-            setTimeout(()=>{
-                resolve(ProductsData)
-            },1000)
-            
+        productosDetail(id)
+        .then((res) =>{
+            setProduct(res)
         })
-        newItem.then((res) =>{
-            setItems(res)
-        }).catch ((error) =>{
-            console.log("Error")
-
+        .catch((error) =>{
+            console.log(error)
         })
-    })
+    },[id])
 
   return (
         <div className='itemDetailContainer'>
             <h1> Desafio Detalle del Producto</h1>
-            {items.map((item) =>{
-                return <ItemDetail key={item.id} products={item}/>
-            })}
+             <ItemDetail product={product}/>
+
         </div>
   )
-}
+  }
+
 
 export default ItemDetailContainer

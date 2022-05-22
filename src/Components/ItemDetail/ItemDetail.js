@@ -2,16 +2,17 @@ import React from 'react'
 import "./ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 
-export const ItemDetail = ({products}) => {
+export const ItemDetail = ({product}) => {
+  console.log(product)
   return (
       
     <div>
-        <h1>{products.modelo}</h1>
+        <h1>{product.modelo}</h1>
         <div className='imgCountContainer'>
-        <img src={products.img}/>
+        <img src={product.img}/>
         <ItemCount/>
         </div>
-        <p>{products.descripcion}</p>
+        <p>{product.descripcion}</p>
         </div>
         
     

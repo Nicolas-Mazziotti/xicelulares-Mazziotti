@@ -10,13 +10,13 @@ import { Link } from 'react-router-dom';
   return (
     <nav className='NavbarContainer'>
         <div className="icon">
-          <InstallMobileIcon fontSize="large"/>
+          <Link to="/"><InstallMobileIcon fontSize="large"/></Link>
           <p className='NavbarIcontext'>Xi Celulares</p>
         </div>        
         <ul className='NavbarList'>
             <Link to="/"><li>Home</li></Link>
-            <Link to="/celulares"><li>Celulares</li></Link>
-            <Link to="/accesorios"><li>Accesorios</li></Link>
+            <Link to="/category/celular"><li>Celulares</li></Link>
+            <Link to="/category/accesorio"><li>Accesorios</li></Link>
         </ul>
         <div className='NavbarCart'>
         <CartWidget/>

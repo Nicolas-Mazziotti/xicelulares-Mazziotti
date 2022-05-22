@@ -9,6 +9,7 @@ import Home from './Views/Home/Home'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Celulares from './Views/Home/Celulares/Celulares';
 import Accesorios from './Views/Home/Accesorios/Accesorios';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 
 
 const App = () => {
@@ -18,10 +19,8 @@ const App = () => {
       <NavBar/>
       <Routes>
           <Route path="/" element ={<Home/>}/>
-          <Route path="/celulares" element ={<Celulares/>}/>
-          <Route path="/accesorios" element ={<Accesorios/>}/>
-          {/* Ruta dinamica */}
-          <Route path="/detail/:id" element ={<ItemDetailContainer/>}/>  
+          <Route path="/category/:categoryId" element ={<ItemListContainer/>}/>
+          <Route path="/detail/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}
 
           
       </Routes>
