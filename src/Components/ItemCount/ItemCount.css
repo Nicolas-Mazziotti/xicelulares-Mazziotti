@@ -1,11 +1,9 @@
 .countContainer{
     width: 250px;
     height: 250px;
-    border: solid gray;
-    margin: auto;
-    padding-top: 4rem;
     display: flex;
     flex-direction: column;
+
 }
 
 .countCantidad{

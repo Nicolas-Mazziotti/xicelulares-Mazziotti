@@ -32,7 +32,7 @@ export const ProductsData =
         img: "/assets/smart-watch.png",
         category: 'accesorios',
         home: 'top',
-        descripcion:''
+        descripcion:'Un paso por delante. La Mi Smart Band 6  incorpora una innovadora pantalla grande de bordes redondeados, lo que hace que sea elegante y cómoda de llevar. Su precisión en bordes curvados, logran la forma clásica . Pantalla AMOLED de 1.56". 30 modos deportivos. Monitorización de sueño, de oxigeno, y de frecuencia cardiaca. Escucha tu cuerpo, lleva una vida mas saludable. Diseño cómodo y distinguido.'
     },
     {
         id: 5,
@@ -41,7 +41,7 @@ export const ProductsData =
         img: "/assets/airpods.png",
         category: 'accesorios',
         home: 'top',
-        descripcion:''
+        descripcion:'Xiaomi Redmi Airdots es un diseño sofisticado y ligero una de las mejores opciones para pasarte al mundo de los auriculares True Wireless. Estos te permiten disfrutar de tu música y de tus entrenamientos como nunca antes, sin líos de cables.'
     },
     {
         id: 6,
@@ -50,7 +50,7 @@ export const ProductsData =
         img: "/assets/mi-robot.png",
         category: 'accesorios',
         home: 'top',
-        descripcion:''
+        descripcion:'Limpieza completa de cada habitación en una nueva edición! Mi Robot Vacuum Mop Essential tiene una potencia de succión efectiva de 2200 Pa con 4 niveles de ajuste, adaptándose inteligentemente a la superficie limpia'
     },
 ]
 

@@ -3,8 +3,10 @@ import "./ItemDetailContainer.css"
 import { productosDetail, ProductsData } from '../ProductsData/ProductsData'
 import ItemDetail  from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
+import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetailContainer = () => {
+
 
     //  con useParams obtengo los id de mis products
     const {id} = useParams(); 
@@ -25,7 +27,6 @@ const ItemDetailContainer = () => {
 
   return (
         <div className='itemDetailContainer'>
-            <h1> Desafio Detalle del Producto</h1>
              <ItemDetail product={product}/>
 
         </div>

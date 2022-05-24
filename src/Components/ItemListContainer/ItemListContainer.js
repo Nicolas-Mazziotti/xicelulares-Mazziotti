@@ -8,9 +8,7 @@ const ItemListContainer = ({greeting}) => {
 
     
 const [products, setProducts] = useState ([]) // Almaceno la informacion que devuelve la promise en este estado
-const onAdd = (cantidad) => {
-  alert (`Productos agregados ${cantidad}`)
-}
+
 
 //categorias dinamicas con Params
 const  {categoryId}  = useParams();
@@ -33,11 +31,11 @@ useEffect(() => {
     <>
         <h1>{greeting}</h1>
         <ItemList productos= {products} /> 
-        <ItemCount 
+        {/* <ItemCount 
         initial={1}
         stock= {5}
         onAdd={onAdd}
-        />
+        /> */}
     </>
   )
 }

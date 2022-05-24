@@ -18,11 +18,9 @@ const App = () => {
       <div className="App">
       <NavBar/>
       <Routes>
-          <Route path="/" element ={<Home/>}/>
+          <Route path="/" element ={<ItemListContainer/>}/>
           <Route path="/category/:categoryId" element ={<ItemListContainer/>}/>
-          <Route path="/item/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}
-
-          
+          <Route path="/item/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}     
       </Routes>
       </div>
     </Router>
