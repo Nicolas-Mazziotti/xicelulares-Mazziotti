@@ -5,6 +5,7 @@ import ItemListContainer from '../../../Components/ItemListContainer/ItemListCon
 const Celulares = () => {
   return (
     <>
+    <ItemListContainer/>
     </>
   )
 }

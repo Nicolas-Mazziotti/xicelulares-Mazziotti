@@ -7,11 +7,11 @@ import { useParams } from 'react-router-dom'
 const ItemDetailContainer = () => {
 
     //  con useParams obtengo los id de mis products
-    let id = useParams(); 
+    const {id} = useParams(); 
     console.log(id)
 
     const [product, setProduct] = useState ({}) //guardo en objeto para mostrar solo un producto en el detalle
-    console.log(product + "Item detail")
+    console.log(product + "Item")
 
     useEffect(() =>{
         productosDetail(id)

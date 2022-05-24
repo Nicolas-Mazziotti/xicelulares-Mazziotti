@@ -15,8 +15,8 @@ import { Link } from 'react-router-dom';
         </div>        
         <ul className='NavbarList'>
             <Link to="/"><li>Home</li></Link>
-            <Link to="/category/celular"><li>Celulares</li></Link>
-            <Link to="/category/accesorio"><li>Accesorios</li></Link>
+            <Link to="/category/celulares"><li>Celulares</li></Link>
+            <Link to="/category/accesorios"><li>Accesorios</li></Link>
         </ul>
         <div className='NavbarCart'>
         <CartWidget/>

@@ -13,7 +13,7 @@ const onAdd = (cantidad) => {
 }
 
 //categorias dinamicas con Params
-const { categoryId } = useParams();
+const  {categoryId}  = useParams();
 console.log(categoryId)
 
 useEffect(() => {

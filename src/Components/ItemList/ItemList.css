@@ -1,6 +1,6 @@
 .itemContainer{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 2rem;  
