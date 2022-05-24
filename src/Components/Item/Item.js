@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom'
 const Item = ({products}) => {
     console.log(products)
   return (
-    <div className='item'>
-        <Link to= {`/detail/${products.id}`}><img src={products.img} alt='celular'/></Link>
+    <div className='item text-center'>
+        <img src={products.img} alt='celular'/>
         <p>{products.modelo}</p>
         <span>USD {products.precio}</span>
+        <Link to= {`/item/${products.id}`} className="btnDetalles"><button className='btn btn-primary'>Ver Detalles</button></Link>
     </div>
   )
 }

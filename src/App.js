@@ -20,7 +20,7 @@ const App = () => {
       <Routes>
           <Route path="/" element ={<Home/>}/>
           <Route path="/category/:categoryId" element ={<ItemListContainer/>}/>
-          <Route path="/detail/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}
+          <Route path="/item/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}
 
           
       </Routes>

@@ -3,3 +3,9 @@
     border: solid gray;
     margin: 2rem;
 }
+
+.btnDetalles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
