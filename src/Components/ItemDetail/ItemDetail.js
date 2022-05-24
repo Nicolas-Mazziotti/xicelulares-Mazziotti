@@ -1,10 +1,13 @@
+import { useState } from 'react'
 import React from 'react'
 import "./ItemDetail.css"
 import ItemCount from '../ItemCount/ItemCount'
+import { Link } from 'react-router-dom'
 
 export const ItemDetail = ({product}) => {
-  const onAdd = (cantidad) => {
-    alert (`Productos agregados ${cantidad}`)
+  const [add, setAdd] = useState (false)
+  const onAdd = () => {
+    setAdd(!add)
   }
   
   return (
@@ -15,11 +18,16 @@ export const ItemDetail = ({product}) => {
         <img src={product.img} alt=""/>
         <p>{product.descripcion}</p>
         </div>
-        <ItemCount 
+        <Link to="/cart"><button className='btn btn-primary'> Finalizar Compra</button></Link>
+        { add ?  <p> Añadido</p> :
+        
+        <ItemCount  // en ItemDetail le paso por props los products que guardamos en el estado(prop= productos data a consumir= products)
                 initial={1}
                 stock= {5}
                 onAdd={onAdd}
                 />
+              }
+          
         </div>  
   )
 }

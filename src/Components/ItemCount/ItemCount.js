@@ -3,6 +3,7 @@ import "./ItemCount.css"
 import { useState } from 'react';
 
 
+
 export const ItemCount = ({stock, initial, onAdd}) => {
 
     const [cantidad, setCantidad] = useState(initial);
