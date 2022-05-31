@@ -28,7 +28,7 @@ export const ItemDetail = ({product}) => {
         <img src={product.img} alt=""/>
         <p>{product.descripcion}</p>
         </div>
-        <button onClick={() => addToCart(product)}>Add</button>
+        <button className='btn btn-primary m-2' onClick={() => addToCart(product)}>Add</button>
         <Link to="/cart"><button className='btn btn-primary'> Finalizar Compra</button></Link>
         { add ?  <p> Añadido</p> :
         

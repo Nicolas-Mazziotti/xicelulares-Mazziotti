@@ -44,21 +44,13 @@ const Cart = () => {
     </tr>
 
   </tbody>
-</table>
-              {/* <h4>{`Modelo: ${cartItem.modelo}`}</h4>
-              <h6>{`Categoria: ${cartItem.categoria}`}</h6>
-              <p>{`Precio: ${cartItem.precio}`}</p>
-              <p>{`Cantidad: ${cartItem.quantity}`}</p>
-              <button onClick={() => clearElementInCard(cartItem)}>Eliminar</button> */}
-              
-            </div>
-            
+</table>           
+            </div>           
           )
        })}
       </div>
       <button onClick={() => setCartItems([])} className="btn btn-primary">Eliminar Todo</button>
-      <button className="btn btn-primary">Finalizar</button>
-      
+      <button className="btn btn-primary">Finalizar</button>     
     </div>
   )
 }
