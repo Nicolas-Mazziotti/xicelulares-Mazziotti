@@ -24,10 +24,10 @@ export const ItemCount = ({stock, initial, onAdd}) => {
                             +
                 </button>
             </div>
-            <button className='btn btn-primary' onClick={() => onAdd(cantidad)}
+            {/* <button className='btn btn-primary' onClick={() => onAdd(cantidad)}
                     disabled= {stock === 0 ? true : null }>
                         Agregar al Carrito
-            </button>
+            </button> */}
         </div>
       )
     }

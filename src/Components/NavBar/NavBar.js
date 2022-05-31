@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget';
 import InstallMobileIcon from '@mui/icons-material/InstallMobile';
 import { Link } from 'react-router-dom';
-
+import { CartContext } from '../../Context/CartContext';
 
 
  const NavBar = () => {
+  const {cartItems, setCartItems} = useContext(CartContext)
+
   return (
     <nav className='NavbarContainer'>
         <div className="icon">
@@ -19,7 +21,7 @@ import { Link } from 'react-router-dom';
             <Link to="/category/accesorios"><li>Accesorios</li></Link>
         </ul>
         <div className='NavbarCart'>
-        <CartWidget/>
+        <Link to="/cart"><CartWidget/><span>{cartItems ? cartItems.length : 0 } </span></Link>
         </div>
     </nav>
   )
