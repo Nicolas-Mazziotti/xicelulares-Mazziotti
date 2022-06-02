@@ -29,7 +29,7 @@ export const ItemDetail = ({product}) => {
         <p>{product.descripcion}</p>
         </div>
         <button className='btn btn-primary m-2' onClick={() => addToCart(product)}>Add</button>
-        <Link to="/cart"><button className='btn btn-primary'> Finalizar Compra</button></Link>
+        <Link to="/cart"><button className='btn btn-primary'> Ir al Carrito</button></Link>
         { add ?  <p> Añadido</p> :
         
         <ItemCount  // en ItemDetail le paso por props los products que guardamos en el estado(prop= productos data a consumir= products)

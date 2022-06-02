@@ -12,6 +12,7 @@ import  Cart  from './Views/Cart/Cart';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // 4 Importo mi hoc provider para que envuelva a la app
 import { CartProvider } from './Context/CartContext';
+import Home from './Views/Home/Home';
 
 
 
@@ -22,7 +23,7 @@ const App = () => {
         <div className="App">
         <NavBar/>
         <Routes>
-            <Route path="/" element ={<ItemListContainer/>}/>
+            <Route path="/" element ={<Home/>}/>
             <Route path="/category/:categoryId" element ={<ItemListContainer/>}/>
             <Route path="/item/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}  
             <Route path="/cart" element = {<Cart/>}/>   
