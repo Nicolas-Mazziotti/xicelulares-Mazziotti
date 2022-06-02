@@ -94,3 +94,4 @@ const findItemInCard = (key, item) => {
   const matchInCart = currentProducts && currentProducts.find(product => product.id === item.id);
   return matchInCart;
 }
+
