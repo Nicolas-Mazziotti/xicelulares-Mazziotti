@@ -17,7 +17,7 @@ const Cart = () => {
   
   const resultadoTotal = () => {
     let total = cartItems.reduce((acc, cartItem) => {
-        return acc + cartItem.precio
+        return acc + cartItem.precio * cartItem.quantity
     }, 0)
     return total
   }
@@ -53,11 +53,14 @@ console.log(resultadoTotal())
     </tr>
 
   </tbody>
+  <p> <strong>Total USD :</strong>  {resultadoTotal()}</p>
+
 </table>           
-            </div>           
+            </div>  
+                     
           )
        })}
-       <p> <strong>Total USD :</strong>  {resultadoTotal()}</p>
+       
       </div>
       <button onClick={() => setCartItems([])} className="btn btn-primary m-2">Eliminar Todo</button>
       <button className="btn btn-primary">Finalizar</button> 

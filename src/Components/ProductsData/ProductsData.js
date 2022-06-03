@@ -67,7 +67,7 @@ export const ProductsData =
         } else {
             resolve(productosFiltrados)
         }     
-    }, 3000)
+    }, 2000)
 })
 }
 
