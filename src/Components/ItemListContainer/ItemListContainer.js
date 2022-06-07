@@ -20,7 +20,7 @@ console.log(categoryId)
 //Firebase config
 
 useEffect(() => {
-  const getProducts = async (categoryId) => {
+  const getProducts = async () => {
     const q = query(collection(db, 'products'));
     const querySnapshot = await getDocs (q);
     const docs = []
@@ -30,11 +30,16 @@ useEffect(() => {
         docs.push({...doc.data(), id: doc.id})
       console.log(doc.data())
       console.log(docs)
+      if(categoryId === undefined){
+        setProducts(docs)
+      }else{
+        setProducts(docs.filter((prod) => prod.category === categoryId))
+      }
     })
-    setProducts(docs)
+    
     };
     getProducts()
-}, []);
+}, [categoryId]);
 // useEffect(() => {
 //   //le paso la resolve a setProductos para modificar
 //       traerProductos(categoryId) // me traigo la funcion desde ProductsData
