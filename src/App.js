@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 
+//Firebase - FireStore
+import { collection, query, getDocs } from 'firebase/firestore';
+import { db } from './firebase/firebaseConfig';
 
 //Componentes
 import  NavBar  from './Components/NavBar/NavBar';

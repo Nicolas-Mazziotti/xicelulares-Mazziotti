@@ -4,6 +4,9 @@ import {ProductsData, traerProductos} from '../ProductsData/ProductsData'
 import  ItemList  from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import Spinner from '../Spinner/Spinner'
+//firebase
+import { query, collection, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase/firebaseConfig'
 
 const ItemListContainer = ({greeting}) => {
 
@@ -14,16 +17,34 @@ const ItemListContainer = ({greeting}) => {
 const  {categoryId}  = useParams();
 console.log(categoryId)
 
+//Firebase config
+
 useEffect(() => {
-  //le paso la resolve a setProductos para modificar
-      traerProductos(categoryId) // me traigo la funcion desde ProductsData
-        .then((res) => { 
-          setProducts(res);
-      })
-        .catch((error) => { //en caso de error
-          console.log(error)
-      })
-},[categoryId]); // para que se ejecute una vez sino realiza un ejecuteo infinito , se ponen estados o props
+  const getProducts = async (categoryId) => {
+    const q = query(collection(db, 'products'));
+    const querySnapshot = await getDocs (q);
+    const docs = []
+    //  console.log('data ', querySnapshot)
+    querySnapshot.forEach((doc) => {
+      //pusheo la data que me llego y le agrego el id que viene separado
+        docs.push({...doc.data(), id: doc.id})
+      console.log(doc.data())
+      console.log(docs)
+    })
+    setProducts(docs)
+    };
+    getProducts()
+}, []);
+// useEffect(() => {
+//   //le paso la resolve a setProductos para modificar
+//       traerProductos(categoryId) // me traigo la funcion desde ProductsData
+//         .then((res) => { 
+//           setProducts(res);
+//       })
+//         .catch((error) => { //en caso de error
+//           console.log(error)
+//       })
+// },[categoryId]); // para que se ejecute una vez sino realiza un ejecuteo infinito , se ponen estados o props
 
   return (
     <>
