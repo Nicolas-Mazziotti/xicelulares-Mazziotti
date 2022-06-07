@@ -56,7 +56,7 @@
 
 
   
-// //promise para ItemListContainer
+//promise para ItemListContainer
 //   export const traerProductos = (categoryId) => {
 //       return new Promise((resolve, reject) => {
 //           const productosFiltrados = ProductsData.filter((prod) => prod.category === categoryId)
