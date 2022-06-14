@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 import { getItemFromStorage, clearElementInCart, PRODUCT_KEY } from "../../Components/Helpers/localStorage";
+import { Link } from "react-router-dom";
 import './Cart.css'
 
 
@@ -25,11 +26,14 @@ console.log(resultadoTotal())
   
 
   return (
-    <div>
+    
+      <div>
+        { cartItems.length > 0 ? (
+      <>
       <div className="cartContainer">
       <h3>Carrito</h3>
       <table className="table" >
-      <thead >
+      <thead>
     <tr >
     <th scope="col">Estilo</th>
       <th scope="col">Modelo</th>
@@ -43,30 +47,35 @@ console.log(resultadoTotal())
             <div key={index}>
               <table className="table">
   
-  <tbody>
-    <tr>
-    <td> <img src= {cartItem.img} className="cartImg" width="120px" alt='imagen celular' /></td>
-      <td>{cartItem.modelo}</td>
-      <td>{`USD ${cartItem.precio}`}</td>
-      <td>{cartItem.quantity}</td>
-      <td><button className="btn btn-primary" onClick={() => clearElementInCard(cartItem)}>Eliminar</button></td>
-    </tr>
-
-  </tbody>
-  <p> <strong>Total USD :</strong>  {resultadoTotal()}</p>
-
-</table>           
-            </div>  
-                     
+                <tbody>
+                  <tr>
+                  <td> <img src= {cartItem.img} className="cartImg" width="120px" alt='imagen celular' /></td>
+                    <td>{cartItem.modelo}</td>
+                    <td>{`USD ${cartItem.precio}`}</td>
+                    <td>{cartItem.quantity}</td>
+                    <td><button className="btn btn-primary" onClick={() => clearElementInCard(cartItem)}>Eliminar</button></td>
+                  </tr>
+                </tbody> 
+              </table>      
+            </div>                   
           )
-       })}
-       
+       })} 
       </div>
-      <button onClick={() => setCartItems([])} className="btn btn-primary m-2">Eliminar Todo</button>
-      <button className="btn btn-primary">Finalizar</button> 
-
-    </div>
+      <p> <strong>Total USD :</strong>  {resultadoTotal()}</p>
+        <button onClick={() => setCartItems([])} className="btn btn-primary m-2">Eliminar Todo</button>
+        <button className="btn btn-primary">Finalizar</button>
+        </>
+        ) : (
+            <div className="m-5">
+                <p> Carrito vacio</p>
+                <Link to="/" className="btn btn-primary"> Volver al shop</Link>
+            </div>
+            )}
+        
+      </div>
+    
+    
   )
+  
 }
-
 export default Cart

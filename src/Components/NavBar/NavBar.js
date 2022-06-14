@@ -8,6 +8,11 @@ import { CartContext } from '../../Context/CartContext';
 
  const NavBar = () => {
   const {cartItems, setCartItems} = useContext(CartContext)
+  console.log("NavBar Cart", cartItems)
+
+  const quantity = cartItems.reduce((acc,prod) => {
+    return prod.quantity + acc
+  },0)
 
   return (
     <nav className='NavbarContainer'>
@@ -21,7 +26,7 @@ import { CartContext } from '../../Context/CartContext';
             <Link to="/category/accesorios"><li>Accesorios</li></Link>
         </ul>
         <div className='NavbarCart'>
-        <Link to="/cart"><CartWidget/><span>{cartItems ? cartItems.length : 0 } </span></Link>
+        <Link to="/cart"><CartWidget/><span>{cartItems ? quantity : 0 } </span></Link>
         </div>
     </nav>
   )

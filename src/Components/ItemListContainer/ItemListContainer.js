@@ -26,6 +26,7 @@ useEffect(() => {
     const docs = []
     //  console.log('data ', querySnapshot)
     querySnapshot.forEach((doc) => {
+      
       //pusheo la data que me llego y le agrego el id que viene separado
         docs.push({...doc.data(), id: doc.id})
       console.log(doc.data())
@@ -34,10 +35,10 @@ useEffect(() => {
         setProducts(docs)
       }else{
         setProducts(docs.filter((prod) => prod.category === categoryId))
-      }
+      }  
     })
+  };
     
-    };
     getProducts()
 }, [categoryId]);
 // useEffect(() => {

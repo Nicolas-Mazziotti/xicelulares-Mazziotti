@@ -7,7 +7,6 @@ import { CartContext } from '../../Context/CartContext'
 import { setItemInCart, getItemFromStorage, PRODUCT_KEY } from '../Helpers/localStorage'
 
 export const ItemDetail = ({product}) => {
-
   const { setCartItems } = useContext(CartContext);
   //funcion onclick
   const addToCart = (product) => {

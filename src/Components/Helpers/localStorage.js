@@ -37,7 +37,7 @@ export const setItemInCart = (key, item) => {
         const findItemIndex = currentItems.findIndex(item => item.id === currentItemMatch.id);
         currentItems[findItemIndex] = {
           ...currentItemMatch,
-          quantity: currentItemMatch.quantity+1
+           quantity: currentItemMatch.quantity+1
         };
 
         allProducts = [ ...currentItems ]
@@ -79,13 +79,6 @@ export const clearElementInCart = (key, item) => {
 
   setItemInStorage(key, currentItems);
 }
-
-export const clearAll = (key) => {
-  let currentItems = getItemFromStorage(key)
-  if(currentItems){
-    currentItems.clear()
-  }
-  }
 
 
 
