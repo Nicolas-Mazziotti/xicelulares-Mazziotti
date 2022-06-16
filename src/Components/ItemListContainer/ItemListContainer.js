@@ -15,7 +15,7 @@ const ItemListContainer = ({greeting}) => {
 
 //categorias dinamicas con Params
 const  {categoryId}  = useParams();
-console.log(categoryId)
+// console.log(categoryId)
 
 //Firebase config
 
@@ -29,8 +29,8 @@ useEffect(() => {
       
       //pusheo la data que me llego y le agrego el id que viene separado
         docs.push({...doc.data(), id: doc.id})
-      console.log(doc.data())
-      console.log(docs)
+      // console.log(doc.data())
+      // console.log(docs)
       if(categoryId === undefined){
         setProducts(docs)
       }else{

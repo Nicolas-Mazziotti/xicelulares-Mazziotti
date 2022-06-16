@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
     // console.log(product + "Item")
     // con useParams obtengo los id de mis products
     const {id} = useParams(); 
-    console.log(id)
+    // console.log(id)
     
     useEffect(() => {
         const getProducts = async () => {
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
           querySnapshot.forEach((doc) => {
             //pusheo la data que me llego y le agrego el id que viene separado
               docs.push({...doc.data(), id: doc.id})
-            console.log(doc.data())
+            // console.log(doc.data())
            
           })
           setProduct(docs)

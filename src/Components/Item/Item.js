@@ -5,7 +5,7 @@ import Spinner from '../Spinner/Spinner'
 
 const Item = ({products}) => {
 
-    console.log(products)
+    // console.log(products)
   return (
     
     <div className='item text-center'>

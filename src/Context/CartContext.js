@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { getItemFromStorage, PRODUCT_KEY } from '../Components/Helpers/localStorage';
+
 
 //1 Creo el context
 
@@ -7,12 +7,59 @@ export const CartContext = createContext();
 
 //2 Creo el componente provider que luego envolvera a la app
 export const CartProvider = ({children}) => {
-    const [cartItems, setCartItems] = useState(getItemFromStorage(PRODUCT_KEY));
+    const [cartItems, setCartItems] = useState([]);
+
+    //funcion para agregar al carrito
+    const addToCart = (item, cantidad) =>{
+    if(isInCart){
+        //Si ya esta en el carrito le sumo la cantidad al producto que ya esta
+        sumarCantidad(item,cantidad)
+    } else {
+        //si no esta en el carrito, lo agrego
+        setCartItems([...cartItems, { ...item, cantidad: cantidad}])
+    }
+    }
+    //funcion para comprobar si esta o no en el carrito
+    //devuelve true or false
+    const isInCart = (id) => {
+        cartItems.some((producto) => producto.id === id)
+    }
+
+    //funcion para sumar cantidad
+    const sumarCantidad = (item, cantidad) => {
+        setCartItems(
+            cartItems.map((prod) => prod.id === item.id ? { ...prod, cantidad: prod.cantidad + cantidad} : prod)
+        )
+    }
+
+    //funcion para sumar el total
+    const totalPrice = () => {
+        let total = cartItems.reduce((acc, item) => {
+            return acc + item.precio * item.cantidad
+        }, 0)
+        return total
+    }
+    //funcion para sumar las unidades en el carrito
+    const totalUnidades = () =>{
+        const suma = cartItems.reduce((acc, item) => {
+            return acc + item.cantidad
+        },0)
+        return suma
+    }
+    //funcion eliminar 1 item
+    const deleteItem = (item) =>{
+        const itemDeleted =  cartItems.filter((prod) => prod.id !== item);
+        setCartItems(itemDeleted)
+    }
+
+    const deleteAll = () => setCartItems([])
+ 
+
 
 // children = todos los componentes hijos dentro de provider app
 //3 Retorno el CartContext con los value(funciones,etc) que serviran para toda la app
     return (
-        <CartContext.Provider value= {{cartItems, setCartItems}}>
+        <CartContext.Provider value= {{cartItems, addToCart, totalPrice, totalUnidades, deleteItem, deleteAll}}>
             {children}
         </CartContext.Provider>
     )

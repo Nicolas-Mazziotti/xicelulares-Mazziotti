@@ -1,29 +1,13 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-import { getItemFromStorage, clearElementInCart, PRODUCT_KEY } from "../../Components/Helpers/localStorage";
 import { Link } from "react-router-dom";
 import './Cart.css'
 
 
 const Cart = () => {
 
-  const { cartItems, setCartItems } = useContext(CartContext);
+  const { cartItems, totalPrice, totalUnidades, deleteItem, deleteAll } = useContext(CartContext);
   console.log('cartItems: ', cartItems);
-
-  const clearElementInCard = (item) => {
-    clearElementInCart(PRODUCT_KEY, item);
-    const products = getItemFromStorage(PRODUCT_KEY);
-    setCartItems(products)
-  }
-  
-  const resultadoTotal = () => {
-    let total = cartItems.reduce((acc, cartItem) => {
-        return acc + cartItem.precio * cartItem.quantity
-    }, 0)
-    return total
-  }
-console.log(resultadoTotal())
-  
 
   return (
     
@@ -52,8 +36,8 @@ console.log(resultadoTotal())
                   <td> <img src= {cartItem.img} className="cartImg" width="120px" alt='imagen celular' /></td>
                     <td>{cartItem.modelo}</td>
                     <td>{`USD ${cartItem.precio}`}</td>
-                    <td>{cartItem.quantity}</td>
-                    <td><button className="btn btn-primary" onClick={() => clearElementInCard(cartItem)}>Eliminar</button></td>
+                    <td>{totalUnidades()}</td>
+                    <td><button className="btn btn-primary" onClick={() => deleteItem(cartItem)}>Eliminar</button></td>
                   </tr>
                 </tbody> 
               </table>      
@@ -61,8 +45,8 @@ console.log(resultadoTotal())
           )
        })} 
       </div>
-      <p> <strong>Total USD :</strong>  {resultadoTotal()}</p>
-        <button onClick={() => setCartItems([])} className="btn btn-primary m-2">Eliminar Todo</button>
+      <p> <strong>Total USD :</strong>  {totalPrice()}</p>
+        <button onClick={() => deleteAll()} className="btn btn-primary m-2">Eliminar Todo</button>
         <button className="btn btn-primary">Finalizar</button>
         </>
         ) : (

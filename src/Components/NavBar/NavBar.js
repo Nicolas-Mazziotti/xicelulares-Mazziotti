@@ -8,11 +8,12 @@ import { CartContext } from '../../Context/CartContext';
 
  const NavBar = () => {
   const {cartItems, setCartItems} = useContext(CartContext)
-  console.log("NavBar Cart", cartItems)
+  // console.log("NavBar Cart", cartItems)
 
+  // aumenta el length de cartWidget de acuerdo a la cantidad de productos
   const quantity = cartItems.reduce((acc,prod) => {
     return prod.quantity + acc
-  },0)
+  },0);
 
   return (
     <nav className='NavbarContainer'>
