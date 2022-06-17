@@ -16,7 +16,7 @@ export const ItemDetail = ({product}) => {
     console.log(cantidad)
     setUnidades(cantidad)
     addToCart(product, cantidad)
-    console.log(product)
+    console.log(product, cantidad)
   }
   return (
       
@@ -29,8 +29,9 @@ export const ItemDetail = ({product}) => {
         
         <ItemCount  // en ItemDetail le paso por props los products que guardamos en el estado(prop= productos data a consumir= products)
                 initial={1}
-                stock= {product}
-                onAdd={onAdd}             
+                stock= {5}
+                onAdd={onAdd}
+                product={product}             
                 />   
         </div>  
   )

@@ -8,10 +8,9 @@ export const CartContext = createContext();
 //2 Creo el componente provider que luego envolvera a la app
 export const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
-
     //funcion para agregar al carrito
     const addToCart = (item, cantidad) =>{
-    if(isInCart){
+    if(isInCart(item.id)){
         //Si ya esta en el carrito le sumo la cantidad al producto que ya esta
         sumarCantidad(item,cantidad)
     } else {

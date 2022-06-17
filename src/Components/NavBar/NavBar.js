@@ -12,7 +12,7 @@ import { CartContext } from '../../Context/CartContext';
 
   // aumenta el length de cartWidget de acuerdo a la cantidad de productos
   const quantity = cartItems.reduce((acc,prod) => {
-    return prod.quantity + acc
+    return prod.cantidad + acc
   },0);
 
   return (

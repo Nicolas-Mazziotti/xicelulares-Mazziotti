@@ -37,7 +37,7 @@ const Cart = () => {
                     <td>{cartItem.modelo}</td>
                     <td>{`USD ${cartItem.precio}`}</td>
                     <td>{totalUnidades()}</td>
-                    <td><button className="btn btn-primary" onClick={() => deleteItem(cartItem)}>Eliminar</button></td>
+                    <td><button className="btn btn-primary" onClick={() => deleteItem(cartItem.id)}>Eliminar</button></td>
                   </tr>
                 </tbody> 
               </table>      
