@@ -36,8 +36,8 @@ const Cart = () => {
                   <td> <img src= {cartItem.img} className="cartImg" width="120px" alt='imagen celular' /></td>
                     <td>{cartItem.modelo}</td>
                     <td>{`USD ${cartItem.precio}`}</td>
-                    <td>{totalUnidades()}</td>
-                    <td><button className="btn btn-primary" onClick={() => deleteItem(cartItem.id)}>Eliminar</button></td>
+                    <td>{cartItem.cantidad}</td>
+                    <td><button className="btn btn-primary" key={cartItem.id} onClick={() => deleteItem(cartItem.id)}>Eliminar</button></td>
                   </tr>
                 </tbody> 
               </table>      

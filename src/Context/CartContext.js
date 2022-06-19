@@ -20,8 +20,14 @@ export const CartProvider = ({children}) => {
     }
     //funcion para comprobar si esta o no en el carrito
     //devuelve true or false
+
     const isInCart = (id) => {
-        cartItems.some((producto) => producto.id === id)
+        const carrito = cartItems.find((producto) => producto.id === id)
+        if(carrito !== undefined){
+            return true
+        }else{
+            return false
+        }
     }
 
     //funcion para sumar cantidad
@@ -40,17 +46,17 @@ export const CartProvider = ({children}) => {
     }
     //funcion para sumar las unidades en el carrito
     const totalUnidades = () =>{
-        const suma = cartItems.reduce((acc, item) => {
-            return acc + item.cantidad
-        },0)
-        return suma
+        const total = cartItems.reduce((acc, item) => acc + item.cantidad, 0)
+        return total
     }
     //funcion eliminar 1 item
     const deleteItem = (item) =>{
-        const itemDeleted =  cartItems.filter((prod) => prod.id !== item);
-        setCartItems(itemDeleted)
+        console.log(item)
+        const newCart =  cartItems.filter((prod) => prod.id !== item);
+        console.log("nuevocarrito", newCart)
+        setCartItems(newCart)
     }
-
+    //funcion eliminar todos los productos
     const deleteAll = () => setCartItems([])
  
 
