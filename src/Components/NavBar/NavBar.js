@@ -27,7 +27,8 @@ import { CartContext } from '../../Context/CartContext';
             <Link to="/category/accesorios"><li>Accesorios</li></Link>
         </ul>
         <div className='NavbarCart'>
-        <Link to="/cart"><CartWidget/><span>{cartItems ? quantity : 0 } </span></Link>
+          {cartItems.length ? <Link to="/cart"><CartWidget/>{quantity}</Link> : <Link style = {{display:"none"}} to="/cart"><CartWidget/></Link> }
+        {/* <span>{cartItems ? quantity : 0 } </span></Link> */}
         </div>
     </nav>
   )
