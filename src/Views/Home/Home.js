@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
     <Header/>
-    <ItemListContainer/>
+    <ItemListContainer greeting="Todos los productos"/>
     </>
   )
 }

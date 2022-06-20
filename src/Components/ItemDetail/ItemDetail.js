@@ -18,6 +18,7 @@ export const ItemDetail = ({product}) => {
     console.log(cantidad)
     setUnidades(cantidad)
     addToCart(product, cantidad)
+    alert("Se han agregado")
     console.log(product, cantidad)
   }
   return (
