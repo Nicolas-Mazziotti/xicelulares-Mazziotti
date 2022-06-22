@@ -1,15 +1,22 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import { TextField } from '@mui/material'
+import { CartContext } from '../../Context/CartContext'
 import "./PurchaseDetail.css"
+import { collection, addDoc} from 'firebase/firestore'
+import { db } from '../../firebase/firebaseConfig'
+import Alerts from '../Alerts/Alerts'
 
 const initialState = {
     nombre: '',
-    direccion: '',
+    email: '',
     numero:''
 }
 
 export const PurchaseDetail = () => {
+    const {cartItems} = useContext(CartContext)
+    console.log(cartItems, "PURCHASE")
     const [values, setValues] = useState (initialState)
+    const [purchaseId, setPurchaseId] = useState ("") //estado de la compra
 
     const handleOnChange = (e) => {
         const {value, name} = e.target;
@@ -17,9 +24,15 @@ export const PurchaseDetail = () => {
         setValues({ ...values, [name]: value}) // name= propiedad de los inputs
     
     }
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault()
-        console.log(values)
+        // Add a new document with a generated id.
+        const docRef = await addDoc(collection(db, "compras"), {
+            values,
+        });
+        console.log("Document written with ID: ", docRef.id);
+        setPurchaseId(docRef.id)
+        setValues(initialState) //refresco el formulario
     }
 
   return (
@@ -33,9 +46,9 @@ export const PurchaseDetail = () => {
             onChange={handleOnChange}
             />
             <TextField 
-            placeholder='Direccion'
-            name='direccion'
-            value={values.direccion}
+            placeholder='Email'
+            name='email'
+            value={values.email}
             onChange={handleOnChange}
             />
             <TextField
@@ -46,6 +59,7 @@ export const PurchaseDetail = () => {
             />
             <TextField type="submit"/>
         </form>
+        {purchaseId && <Alerts purchaseId={purchaseId}/>}
     </div>
   )
 }

@@ -3,11 +3,11 @@ import { AlertTitle } from '@mui/material';
 
 import React from 'react'
 
-const Alerts = () => {
+const Alerts = ({purchaseId}) => {
   return (
         <Alert severity="success">
             <AlertTitle>Success</AlertTitle>
-            This is a success alert — <strong>check it out!</strong>
+            Compra realizada Exitosamente — <strong>Su ID de transacción es: {purchaseId}</strong>
         </Alert>
   )
 }
