@@ -47,7 +47,7 @@ const Cart = () => {
       </div>
       <p> <strong>Total USD :</strong>  {totalPrice()}</p>
         <button onClick={() => deleteAll()} className="btn btn-primary m-2">Eliminar Todo</button>
-        <button className="btn btn-primary">Finalizar</button>
+        <Link to="/cart/purchase"><button className="btn btn-primary">Ir a pagar</button></Link>
         </>
         ) : (
             <div className="m-5">

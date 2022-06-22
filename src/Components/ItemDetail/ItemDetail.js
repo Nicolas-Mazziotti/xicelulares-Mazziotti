@@ -6,6 +6,8 @@ import ItemCount from '../ItemCount/ItemCount'
 //me traigo el cartcontex para usar las funciones
 import { CartContext } from '../../Context/CartContext'
 import { LinkSharp } from '@mui/icons-material'
+import Alerts from '../Alerts/Alerts'
+import { Alert } from 'bootstrap'
 
 
 export const ItemDetail = ({product}) => {
@@ -18,7 +20,6 @@ export const ItemDetail = ({product}) => {
     console.log(cantidad)
     setUnidades(cantidad)
     addToCart(product, cantidad)
-    alert("Se han agregado")
     console.log(product, cantidad)
   }
   return (

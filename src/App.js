@@ -9,6 +9,7 @@ import { db } from './firebase/firebaseConfig';
 import  NavBar  from './Components/NavBar/NavBar';
 import  ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import  PurchaseDetail  from './Components/PurchaseDetail/PurchaseDetail';
 //Views
 import  Cart  from './Views/Cart/Cart';
 //Dependencias
@@ -29,7 +30,8 @@ const App = () => {
             <Route path="/" element ={<Home/>}/>
             <Route path="/category/:categoryId" element ={<ItemListContainer/>}/>
             <Route path="/item/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}  
-            <Route path="/cart" element = {<Cart/>}/>   
+            <Route path="/cart" element = {<Cart/>}/>
+            <Route path="/cart/purchase" element= {<PurchaseDetail/>}/>   
         </Routes>
         </div>
       </Router>
