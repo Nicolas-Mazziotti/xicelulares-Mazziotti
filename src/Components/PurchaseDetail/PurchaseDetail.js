@@ -14,15 +14,22 @@ const initialState = {
 
 export const PurchaseDetail = () => {
     const {cartItems} = useContext(CartContext)
-    console.log(cartItems, "PURCHASE")
     const [values, setValues] = useState (initialState)
     const [purchaseId, setPurchaseId] = useState ("") //estado de la compra
+
+    const cartProducts = cartItems.map((prod) => ({
+        id: prod.id,
+        modelo: prod.modelo,
+        precio: prod.precio,
+        cantidad: prod.cantidad
+    }))
 
     const handleOnChange = (e) => {
         const {value, name} = e.target;
         //creo un objeto 
-        setValues({ ...values, [name]: value}) // name= propiedad de los inputs
-    
+        setValues({ ...values, [name]: value }) // name= propiedad de los inputs
+        console.log(values)
+        console.log(cartProducts)
     }
     const onSubmit = async (e) => {
         e.preventDefault()
