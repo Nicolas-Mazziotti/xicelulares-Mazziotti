@@ -12,10 +12,12 @@ const initialState = {
     numero:''
 }
 
-export const PurchaseDetail = () => {
+    const PurchaseDetail = () => {
     const {cartItems, totalPrice} = useContext(CartContext)
     const [buyer, setBuyer] = useState (initialState)
     const [purchaseId, setPurchaseId] = useState ("") //estado de la compra
+    console.log(cartItems, "carrito")
+
 
     const cartProducts = cartItems.map((prod) => ({
         id: prod.id,
@@ -24,16 +26,15 @@ export const PurchaseDetail = () => {
         cantidad: prod.cantidad
     }))
 
-    const date = Date.now();
-    const hoy = new Date(date)
-    console.log(hoy)
+    const dateNow = Date.now();
+    const date = new Date(dateNow)
     
-    const totalProducts = totalPrice() 
-
+    const precioTotal = totalPrice() 
+    // ...cartProducts, precioTotal, hoy
     const handleOnChange = (e) => {
         const {value, name} = e.target;
         //creo un objeto 
-        setBuyer({ ...buyer, [name]: value, ...cartProducts, ...date, ...totalProducts }) // name= propiedad de los inputs
+        setBuyer({ ...buyer, [name]: value }) // name= propiedad de los inputs
         console.log(buyer)
         console.log(cartProducts)
     }
@@ -44,7 +45,7 @@ export const PurchaseDetail = () => {
             buyer,
             cartProducts,
             date,
-            totalProducts
+            precioTotal,
         });
         console.log("Document written with ID: ", docRef.id);
         setPurchaseId(docRef.id)
