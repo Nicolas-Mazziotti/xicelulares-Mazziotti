@@ -13,8 +13,8 @@ const initialState = {
 }
 
 export const PurchaseDetail = () => {
-    const {cartItems} = useContext(CartContext)
-    const [values, setValues] = useState (initialState)
+    const {cartItems, totalPrice} = useContext(CartContext)
+    const [buyer, setBuyer] = useState (initialState)
     const [purchaseId, setPurchaseId] = useState ("") //estado de la compra
 
     const cartProducts = cartItems.map((prod) => ({
@@ -24,22 +24,31 @@ export const PurchaseDetail = () => {
         cantidad: prod.cantidad
     }))
 
+    const date = Date.now();
+    const hoy = new Date(date)
+    console.log(hoy)
+    
+    const totalProducts = totalPrice() 
+
     const handleOnChange = (e) => {
         const {value, name} = e.target;
         //creo un objeto 
-        setValues({ ...values, [name]: value }) // name= propiedad de los inputs
-        console.log(values)
+        setBuyer({ ...buyer, [name]: value, ...cartProducts, ...date, ...totalProducts }) // name= propiedad de los inputs
+        console.log(buyer)
         console.log(cartProducts)
     }
     const onSubmit = async (e) => {
         e.preventDefault()
         // Add a new document with a generated id.
         const docRef = await addDoc(collection(db, "compras"), {
-            values,
+            buyer,
+            cartProducts,
+            date,
+            totalProducts
         });
         console.log("Document written with ID: ", docRef.id);
         setPurchaseId(docRef.id)
-        setValues(initialState) //refresco el formulario
+        setBuyer(initialState) //refresco el formulario
     }
 
   return (
@@ -49,19 +58,19 @@ export const PurchaseDetail = () => {
             <TextField
             placeholder='Name'
             name='nombre'
-            value={values.name}
+            value={buyer.name}
             onChange={handleOnChange}
             />
             <TextField 
             placeholder='Email'
             name='email'
-            value={values.email}
+            value={buyer.email}
             onChange={handleOnChange}
             />
             <TextField
             placeholder='Telefono Celular'
             name='numero'
-            value={values.numero}
+            value={buyer.numero}
             onChange={handleOnChange}
             />
             <TextField type="submit"/>
