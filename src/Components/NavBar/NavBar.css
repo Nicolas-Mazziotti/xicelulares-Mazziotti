@@ -1,8 +1,16 @@
-
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .NavbarContainer {
     display: flex;
     justify-content:space-around;
     background-color: rgb(248, 244, 244);
+    position:fixed;
+    width: 100%;
+    top:0;
+    left: 0;
     
 }
 

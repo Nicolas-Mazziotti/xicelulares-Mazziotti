@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./ItemDetailContainer.css"
-import { productosDetail, ProductsData } from '../ProductsData/ProductsData'
 import ItemDetail  from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount'
+
 //firebase
 import { query, collection, getDocs, documentId, where } from 'firebase/firestore'
 import { db } from '../../firebase/firebaseConfig'
@@ -33,16 +32,6 @@ const ItemDetailContainer = () => {
           getProducts()
       }, [id]);
 
-
-    // useEffect(() =>{
-    //     productosDetail(id)
-    //     .then((res) =>{
-    //         setProduct(res)
-    //     })
-    //     .catch((error) =>{
-    //         console.log(error)
-    //     })
-    // },[id])
 
   return (
         <div className='itemDetailContainer'>

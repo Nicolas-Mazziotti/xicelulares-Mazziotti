@@ -1,10 +1,17 @@
 .purchaseContainer {
-
+    margin-top: 5rem;
 }
 .formContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 4rem;
+}
+
+.textFieldContainer{
+    margin-bottom: 2rem;
+}
+.textField {
+    width: 400px;
 }

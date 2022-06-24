@@ -5,6 +5,8 @@ import "./PurchaseDetail.css"
 import { collection, addDoc} from 'firebase/firestore'
 import { db } from '../../firebase/firebaseConfig'
 import Alerts from '../Alerts/Alerts'
+import CheckOutProducts from '../CheckOutProducts/CheckOutProducts'
+
 
 const initialState = {
     nombre: '',
@@ -48,32 +50,57 @@ const initialState = {
             precioTotal,
         });
         console.log("Document written with ID: ", docRef.id);
+        console.log(docRef)
         setPurchaseId(docRef.id)
         setBuyer(initialState) //refresco el formulario
     }
 
   return (
+    
     <div className='purchaseContainer'>
+        <CheckOutProducts/>
         <h1> Ultimo Paso - Complete el siguiente formulario</h1>
         <form className='formContainer' onSubmit={onSubmit}>
+            <div className='textFieldContainer'>
             <TextField
-            placeholder='Name'
+            placeholder='Nombre'
             name='nombre'
             value={buyer.name}
             onChange={handleOnChange}
+            className="textField"
+            type="text"
             />
+            </div>
+            <div className='textFieldContainer'>
+            <TextField
+            placeholder='Apellido'
+            name='apellido'
+            value={buyer.apellido}
+            onChange={handleOnChange}
+            className="textField"
+            type="text"
+            />
+            </div>
+            <div className='textFieldContainer'>
             <TextField 
             placeholder='Email'
             name='email'
             value={buyer.email}
             onChange={handleOnChange}
+            className="textField"
+            type="email"
             />
+            </div>
+            <div className='textFieldContainer'>
             <TextField
             placeholder='Telefono Celular'
             name='numero'
             value={buyer.numero}
             onChange={handleOnChange}
+            className="textField"
+            type="number"
             />
+            </div>
             <TextField type="submit"/>
         </form>
         {purchaseId && <Alerts purchaseId={purchaseId}/>}

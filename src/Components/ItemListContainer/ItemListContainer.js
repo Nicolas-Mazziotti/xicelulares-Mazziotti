@@ -1,6 +1,5 @@
 import  {React, useState, useEffect} from 'react'
 import  ItemCount from '../ItemCount/ItemCount'
-import {ProductsData, traerProductos} from '../ProductsData/ProductsData'
 import  ItemList  from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
 import Spinner from '../Spinner/Spinner'
@@ -41,20 +40,11 @@ useEffect(() => {
     
     getProducts()
 }, [categoryId]);
-// useEffect(() => {
-//   //le paso la resolve a setProductos para modificar
-//       traerProductos(categoryId) // me traigo la funcion desde ProductsData
-//         .then((res) => { 
-//           setProducts(res);
-//       })
-//         .catch((error) => { //en caso de error
-//           console.log(error)
-//       })
-// },[categoryId]); // para que se ejecute una vez sino realiza un ejecuteo infinito , se ponen estados o props
+
 
   return (
     <>
-        <h1>{greeting}</h1>
+        <h1 className='mt-4'>{greeting}</h1>
          <ItemList productos= {products} /> 
     </>
   )
