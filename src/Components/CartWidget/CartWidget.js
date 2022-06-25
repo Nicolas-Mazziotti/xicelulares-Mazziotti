@@ -7,5 +7,4 @@ const CartWidget = () => {
     <ShoppingCartIcon/>
   )
 }
-
 export default CartWidget
