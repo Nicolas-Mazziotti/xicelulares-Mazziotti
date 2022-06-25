@@ -33,6 +33,7 @@ const initialState = {
     
     const precioTotal = totalPrice() 
     // ...cartProducts, precioTotal, hoy
+    
     const handleOnChange = (e) => {
         const {value, name} = e.target;
         //creo un objeto 
@@ -40,6 +41,7 @@ const initialState = {
         console.log(buyer)
         console.log(cartProducts)
     }
+
     const onSubmit = async (e) => {
         e.preventDefault()
         // Add a new document with a generated id.
