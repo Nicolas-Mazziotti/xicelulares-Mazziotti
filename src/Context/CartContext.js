@@ -10,17 +10,18 @@ export const CartProvider = ({children}) => {
     const [cartItems, setCartItems] = useState([]);
     //funcion para agregar al carrito
     const addToCart = (item, cantidad) =>{
-    if(isInCart(item.id)){
+        if(isInCart(item.id)){
         //Si ya esta en el carrito le sumo la cantidad al producto que ya esta
         sumarCantidad(item,cantidad)
-    } else {
-        //si no esta en el carrito, lo agrego
-        setCartItems([...cartItems, { ...item, cantidad: cantidad}])
+        } else {
+            //si no esta en el carrito, lo agrego
+            setCartItems([...cartItems, { ...item, cantidad: cantidad}])
+        }
     }
-    }
+    
     //funcion para comprobar si esta o no en el carrito
     //devuelve true or false
-
+    
     const isInCart = (id) => {
         const carrito = cartItems.find((producto) => producto.id === id)
         if(carrito !== undefined){
@@ -59,8 +60,6 @@ export const CartProvider = ({children}) => {
     //funcion eliminar todos los productos
     const deleteAll = () => setCartItems([])
  
-
-
 // children = todos los componentes hijos dentro de provider app
 //3 Retorno el CartContext con los value(funciones,etc) que serviran para toda la app
     return (

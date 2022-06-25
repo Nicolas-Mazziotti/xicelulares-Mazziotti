@@ -25,8 +25,6 @@ useEffect(() => {
       
       //pusheo la data que me llego y le agrego el id que viene separado
         docs.push({...doc.data(), id: doc.id})
-      // console.log(doc.data())
-      // console.log(docs)
       if(categoryId === undefined){
         setProducts(docs)
       }else{

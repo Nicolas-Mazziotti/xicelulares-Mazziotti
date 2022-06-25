@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import React from 'react'
 import "./ItemDetail.css"
 import ItemCount from '../ItemCount/ItemCount'
-import Alerts from '../Alerts/Alerts'
 //me traigo el cartcontex para usar las funciones
 import { CartContext } from '../../Context/CartContext'
 

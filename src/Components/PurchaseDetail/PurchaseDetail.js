@@ -62,44 +62,44 @@ const initialState = {
         <h1> Ultimo Paso - Complete el siguiente formulario</h1>
         <form className='formContainer' onSubmit={onSubmit}>
             <div className='textFieldContainer'>
-            <TextField
-            placeholder='Nombre'
-            name='nombre'
-            value={buyer.name}
-            onChange={handleOnChange}
-            className="textField"
-            type="text"
-            label="Nombre"
-            />
+                <TextField
+                placeholder='Nombre'
+                name='nombre'
+                value={buyer.name}
+                onChange={handleOnChange}
+                className="textField"
+                type="text"
+                label="Nombre"
+                />
             </div>
             <div className='textFieldContainer'>
-            <TextField
-            name='apellido'
-            value={buyer.apellido}
-            onChange={handleOnChange}
-            className="textField"
-            type="text"
-            label="Apellido"
-            />
+                <TextField
+                name='apellido'
+                value={buyer.apellido}
+                onChange={handleOnChange}
+                className="textField"
+                type="text"
+                label="Apellido"
+                />
             </div>
             <div className='textFieldContainer'>
-            <TextField 
-            name='email'
-            value={buyer.email}
-            onChange={handleOnChange}
-            className="textField"
-            type="email"
-            label= "Email"
-            />
+                <TextField 
+                name='email'
+                value={buyer.email}
+                onChange={handleOnChange}
+                className="textField"
+                type="email"
+                label= "Email"
+                />
             </div>
             <div className='textFieldContainer'>
-            <TextField
-            name='numero'
-            value={buyer.numero}
-            onChange={handleOnChange}
-            className="textField"
-            label="Telefono Celular"
-            />
+                <TextField
+                name='numero'
+                value={buyer.numero}
+                onChange={handleOnChange}
+                className="textField"
+                label="Telefono Celular"
+                />
             </div>
             <div className='pb-5'>
             <button className="btn btn-secondary">Pagar</button>

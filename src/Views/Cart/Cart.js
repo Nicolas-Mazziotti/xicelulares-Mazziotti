@@ -3,34 +3,31 @@ import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import './Cart.css'
 
-
 const Cart = () => {
 
   const { cartItems, totalPrice, totalUnidades, deleteItem, deleteAll } = useContext(CartContext);
   console.log('cartItems: ', cartItems);
 
   return (
-    
       <div>
         { cartItems.length > 0 ? (
       <>
-      <div className="cartContainer">
-      <h3>Carrito</h3>
-      <table className="table" >
-      <thead>
-    <tr >
-    <th scope="col">Estilo</th>
-      <th scope="col">Modelo</th>
-      <th scope="col" className='ps-3'>Precio</th>
-      <th scope="col" className='pe-5'>Cantidad</th>
-    </tr>
-  </thead>
-        </table>
+        <div className="cartContainer">
+          <h3>Carrito</h3>
+          <table className="table" >
+        <thead>
+          <tr >
+          <th scope="col">Estilo</th>
+            <th scope="col">Modelo</th>
+            <th scope="col" className='ps-3'>Precio</th>
+            <th scope="col" className='pe-5'>Cantidad</th>
+          </tr>
+        </thead>
+          </table>
         {cartItems.map((cartItem, index) => {
           return(
             <div key={index}>
               <table className="table">
-  
                 <tbody>
                   <tr>
                   <td> <img src= {cartItem.img} className="cartImg" width="120px" alt='imagen celular' /></td>
@@ -45,7 +42,7 @@ const Cart = () => {
           )
        })} 
       </div>
-      <p> <strong>Total USD :</strong>  {totalPrice()}</p>
+        <p><strong>Total USD :</strong>  {totalPrice()}</p>
         <button onClick={() => deleteAll()} className="btn btn-primary m-2">Eliminar Todo</button>
         <Link to="/cart/purchase"><button className="btn btn-primary">Ir a pagar</button></Link>
         </>
@@ -55,11 +52,7 @@ const Cart = () => {
                 <Link to="/" className="btn btn-primary"> Volver al shop</Link>
             </div>
             )}
-        
-      </div>
-    
-    
-  )
-  
+      </div> 
+  ) 
 }
 export default Cart

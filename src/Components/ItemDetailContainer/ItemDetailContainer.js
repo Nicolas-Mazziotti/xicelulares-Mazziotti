@@ -10,10 +10,8 @@ import { db } from '../../firebase/firebaseConfig'
 const ItemDetailContainer = () => {
     
     const [product, setProduct] = useState ([]) //guardo en objeto para mostrar solo un producto en el detalle
-    // console.log(product + "Item")
     // con useParams obtengo los id de mis products
     const {id} = useParams(); 
-    // console.log(id)
     
     useEffect(() => {
         const getProducts = async () => {
