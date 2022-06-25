@@ -1,8 +1,26 @@
 import React from 'react'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import "./Footer.css"
 
-export const Footer = () => {
+
+
+ const Footer = () => {
   return (
-    <div>Footer</div>
+    <>
+    <div className='footerContainer'>
+      <div className='redesTitulo'>
+        Redes Sociales
+      </div>
+      <div className='redesIconos'>
+      <a target="_blank" href="https://instagram.com"><InstagramIcon/></a>
+      <a target="_blank" href="https://facebook.com.com"><FacebookIcon/></a>
+      </div>
+    </div>
+    <div className='copyrightContainer'>
+        <p>Copyright - Xi Celulares 2022 Inc.</p>
+    </div>
+    </>
   )
 }
 export default Footer

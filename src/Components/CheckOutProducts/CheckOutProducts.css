@@ -1,4 +1,8 @@
-
+.checkoutBody {
+    border: solid 1px;
+    background-color: white;
+    margin: 5rem;
+}
 .checkoutProducts {
     display: flex;
     flex-direction: row;

@@ -12,6 +12,8 @@
 
 .textFieldContainer{
     margin-bottom: 2rem;
+    background-color: white;
+    color: black;
 }
 .textField {
     width: 400px;

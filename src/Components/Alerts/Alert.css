@@ -1,0 +1,9 @@
+.alertContainer{
+    margin-top: 1rem;
+    width: auto;
+}
+
+.alertTexto{
+    justify-content: center;
+    align-items: center;
+}

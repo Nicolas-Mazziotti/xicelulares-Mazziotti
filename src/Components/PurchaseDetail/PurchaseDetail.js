@@ -69,39 +69,41 @@ const initialState = {
             onChange={handleOnChange}
             className="textField"
             type="text"
+            label="Nombre"
             />
             </div>
             <div className='textFieldContainer'>
             <TextField
-            placeholder='Apellido'
             name='apellido'
             value={buyer.apellido}
             onChange={handleOnChange}
             className="textField"
             type="text"
+            label="Apellido"
             />
             </div>
             <div className='textFieldContainer'>
             <TextField 
-            placeholder='Email'
             name='email'
             value={buyer.email}
             onChange={handleOnChange}
             className="textField"
             type="email"
+            label= "Email"
             />
             </div>
             <div className='textFieldContainer'>
             <TextField
-            placeholder='Telefono Celular'
             name='numero'
             value={buyer.numero}
             onChange={handleOnChange}
             className="textField"
-            type="number"
+            label="Telefono Celular"
             />
             </div>
-            <TextField type="submit"/>
+            <div className='pb-5'>
+            <button className="btn btn-secondary">Pagar</button>
+            </div>
         </form>
         {purchaseId && <Alerts purchaseId={purchaseId}/>}
     </div>

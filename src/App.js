@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
 
-//Firebase - FireStore
-import { collection, query, getDocs } from 'firebase/firestore';
-import { db } from './firebase/firebaseConfig';
 
 //Componentes
 import  NavBar  from './Components/NavBar/NavBar';
 import  ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import  PurchaseDetail  from './Components/PurchaseDetail/PurchaseDetail';
+import Footer from './Components/Footer/Footer';
 //Views
 import  Cart  from './Views/Cart/Cart';
 //Dependencias
@@ -33,6 +31,7 @@ const App = () => {
             <Route path="/cart" element = {<Cart/>}/>
             <Route path="/cart/purchase" element= {<PurchaseDetail/>}/>   
         </Routes>
+        <Footer/>
         </div>
       </Router>
     </CartProvider>
