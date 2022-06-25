@@ -8,18 +8,23 @@ import "./CheckOutProducts.css"
   console.log(cartItems)
   return (
     <div>
+      <h3>Usted ha comprado:</h3>
       {cartItems.map((item) => {
         return (
-          <div>
-            <p>Usted ha comprado:</p>
-            <span>{item.cantidad}</span>
-            <p>{item.modelo}</p>
-            <img src= {item.img} className="cartImg" width="120px" alt='imagen celular' />
-            <span>{`Precio Unitario: ${item.precio}`}</span>
-            <p><strong>Total USD: {totalPrice()}</strong></p>
+          <div className='checkoutContainer'>
+            
+              <div className='checkoutProducts'>
+                <span className='checkoutProduct'>{item.cantidad}</span>
+                <p className='checkoutProduct' >{item.modelo}</p>
+                <img src= {item.img} className='checkoutProduct' width="120px" alt='imagen celular' />
+                <span className='checkoutProduct'>{`Precio Unitario: ${item.precio}`}</span>
+                
+              </div>
           </div>
+          
         )
       })}
+      <p><strong>Total USD: {totalPrice()}</strong></p>
     </div>
   )
   

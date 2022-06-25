@@ -1,3 +1,7 @@
+.detailContainer{
+    margin-top: 5rem;
+}
+
 .imgCountContainer{
     display: flex;
     flex-direction: row;

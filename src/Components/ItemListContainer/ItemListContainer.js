@@ -1,8 +1,6 @@
 import  {React, useState, useEffect} from 'react'
-import  ItemCount from '../ItemCount/ItemCount'
 import  ItemList  from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom'
-import Spinner from '../Spinner/Spinner'
 //firebase
 import { query, collection, getDocs } from 'firebase/firestore'
 import { db } from '../../firebase/firebaseConfig'
@@ -10,7 +8,6 @@ import { db } from '../../firebase/firebaseConfig'
 const ItemListContainer = ({greeting}) => {
 
     const [products, setProducts] = useState ([]) // Almaceno la informacion que devuelve la promise en este estado
-    const [loading, setLoading] = useState (true);
 
 //categorias dinamicas con Params
 const  {categoryId}  = useParams();

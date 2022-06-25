@@ -1,5 +1,6 @@
 .purchaseContainer {
     margin-top: 5rem;
+    background-color: rgb(241, 227, 240);
 }
 .formContainer{
     display: flex;

@@ -1,7 +1,6 @@
 import React from 'react'
 import Item from '../Item/Item'
 import './ItemList.css'
-import {Link} from 'react-router-dom'
 
  const ItemList = ({productos}) => { // productos = prop que le pase en ItemListContainer para consumir la data
   return (

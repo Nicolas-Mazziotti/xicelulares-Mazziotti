@@ -5,7 +5,7 @@ import ItemListContainer from '../../Components/ItemListContainer/ItemListContai
 const Celulares = () => {
   return (
     <>
-    <ItemListContainer/>
+    <ItemListContainer greeting="Todos los Celulares"/>
     </>
   )
 }
