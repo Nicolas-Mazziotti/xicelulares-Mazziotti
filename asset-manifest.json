@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/xicelulares-Mazziotti/static/css/main.ee9e8048.css",
+    "main.js": "/xicelulares-Mazziotti/static/js/main.6b435368.js",
+    "index.html": "/xicelulares-Mazziotti/index.html",
+    "main.ee9e8048.css.map": "/xicelulares-Mazziotti/static/css/main.ee9e8048.css.map",
+    "main.6b435368.js.map": "/xicelulares-Mazziotti/static/js/main.6b435368.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ee9e8048.css",
+    "static/js/main.6b435368.js"
+  ]
+}
