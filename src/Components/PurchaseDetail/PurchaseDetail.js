@@ -15,7 +15,7 @@ const initialState = {
 }
 
     const PurchaseDetail = () => {
-    const {cartItems, totalPrice} = useContext(CartContext)
+    const {cartItems, totalPrice, deleteAll} = useContext(CartContext)
     const [buyer, setBuyer] = useState (initialState)
     const [purchaseId, setPurchaseId] = useState ("") //estado de la compra
     console.log(cartItems, "carrito")
@@ -55,6 +55,7 @@ const initialState = {
         console.log(docRef)
         setPurchaseId(docRef.id)
         setBuyer(initialState) //refresco el formulario
+        deleteAll()
     }
 
   return (

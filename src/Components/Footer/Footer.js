@@ -13,8 +13,8 @@ import "./Footer.css"
         Redes Sociales
       </div>
       <div className='redesIconos'>
-      <a target="_blank" href="https://instagram.com"><InstagramIcon/></a>
-      <a target="_blank" href="https://facebook.com.com"><FacebookIcon/></a>
+      <a target="_blank" rel="noreferrer" href="https://instagram.com"><InstagramIcon/></a>
+      <a target="_blank"rel="noreferrer" href="https://facebook.com"><FacebookIcon/></a>
       </div>
     </div>
     <div className='copyrightContainer'>
