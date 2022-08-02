@@ -7,6 +7,7 @@ import { CartContext } from '../../Context/CartContext';
 
 
  const NavBar = () => {
+  // eslint-disable-next-line no-unused-vars
   const {cartItems, setCartItems} = useContext(CartContext)
   // console.log("NavBar Cart", cartItems)
 

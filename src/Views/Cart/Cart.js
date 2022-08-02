@@ -5,6 +5,7 @@ import './Cart.css'
 
 const Cart = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const { cartItems, totalPrice, totalUnidades, deleteItem, deleteAll } = useContext(CartContext);
   console.log('cartItems: ', cartItems);
 

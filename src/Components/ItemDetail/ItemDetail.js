@@ -11,8 +11,8 @@ import { CartContext } from '../../Context/CartContext'
 export const ItemDetail = ({product}) => {
   //traigo la funcion del CartContext
   const{addToCart, cartItems} = useContext(CartContext)
+  // eslint-disable-next-line no-unused-vars
   const[unidades, setUnidades] = useState(0)
-  const [purchaseId, setPurchaseId] = useState ("") //estado de la compra
 
   const onAdd = (cantidad) => {
     setUnidades(cantidad)
