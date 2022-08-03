@@ -22,7 +22,7 @@ const App = () => {
         <div className="App">
         <NavBar/>
         <Routes>
-            <Route path="/" element ={<Home/>}/>
+            <Route path="/xicelulares-Mazziotti" element ={<Home/>}/>
             <Route path="/category/:categoryId" element ={<ItemListContainer/>}/>
             <Route path="/item/:id" element ={<ItemDetailContainer/>}/>  {/* Ruta dinamica */}  
             <Route path="/cart" element = {<Cart/>}/>
