@@ -33,7 +33,7 @@ export const ItemDetail = ({product}) => {
             <Link to = "/cart"> <button className='btn btn-primary m-1'> Ir al Carrito</button></Link>
             <Link to="/"><button className='btn btn-primary'>Seguir Comprando</button></Link>
           </div>  : 
-            <Link to="/"><button className='btn btn-primary'>Volver al shop</button></Link>}
+            <Link to="/xicelulares-Mazziotti"><button className='btn btn-primary'>Volver al shop</button></Link>}
         
         <ItemCount  // en ItemDetail le paso por props los products que guardamos en el estado(prop= productos data a consumir= products)
                 initial={1}

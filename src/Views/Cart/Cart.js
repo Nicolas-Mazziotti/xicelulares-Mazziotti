@@ -50,7 +50,7 @@ const Cart = () => {
         ) : (
             <div className="m-5">
                 <p> Carrito vacio</p>
-                <Link to="/" className="btn btn-primary"> Volver al shop</Link>
+                <Link to="/xicelulares-Mazziotti" className="btn btn-primary"> Volver al shop</Link>
             </div>
             )}
       </div> 

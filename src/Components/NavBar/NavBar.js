@@ -19,11 +19,11 @@ import { CartContext } from '../../Context/CartContext';
   return (
     <nav className='NavbarContainer'>
         <div className="icon">
-          <Link to="/"><InstallMobileIcon fontSize="large"/></Link>
+          <Link to="/xicelulares-Mazziotti"><InstallMobileIcon fontSize="large"/></Link>
           <p className='NavbarIcontext'>Xi Celulares</p>
         </div>        
         <ul className='NavbarList'>
-            <Link to="/"><li>Home</li></Link>
+            <Link to="/xicelulares-Mazziotti"><li>Home</li></Link>
             <Link to="/category/celulares"><li>Celulares</li></Link>
             <Link to="/category/accesorios"><li>Accesorios</li></Link>
         </ul>
