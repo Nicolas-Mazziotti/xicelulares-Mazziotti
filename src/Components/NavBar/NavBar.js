@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget';
 import InstallMobileIcon from '@mui/icons-material/InstallMobile';
+import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
 
@@ -20,6 +21,7 @@ import { CartContext } from '../../Context/CartContext';
     <nav className='NavbarContainer'>
         <div className="icon">
           <Link to="/xicelulares-Mazziotti"><InstallMobileIcon fontSize="large"/></Link>
+          <button className='btnNavbar'><MenuIcon/></button>
           <p className='NavbarIcontext'>Xi Celulares</p>
         </div>        
         <ul className='NavbarList'>
@@ -27,6 +29,7 @@ import { CartContext } from '../../Context/CartContext';
             <Link to="/category/celulares"><li>Celulares</li></Link>
             <Link to="/category/accesorios"><li>Accesorios</li></Link>
         </ul>
+        
         <div className='NavbarCart'>
           {/* {cartItems.length ? <Link to="/cart"><CartWidget/>{quantity}</Link> : <Link style = {{display:"none"}} to="/cart"><CartWidget/></Link> } */}
         <Link to="/cart"><CartWidget/><span>{cartItems ? quantity : 0 } </span></Link>
