@@ -58,6 +58,7 @@
     width: 0;
     visibility: hidden;
 }
+
 /*Media queries*/
 
 @media only screen and (max-width: 768px){
@@ -81,5 +82,6 @@
     .NavbarCart a {
         margin-right: 2rem;
     }
+
 }
 

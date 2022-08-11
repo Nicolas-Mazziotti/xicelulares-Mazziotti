@@ -1,27 +1,38 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget';
 import InstallMobileIcon from '@mui/icons-material/InstallMobile';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
+import Sidebar from '../Sidebar/Sidebar';
 
 
  const NavBar = () => {
   // eslint-disable-next-line no-unused-vars
   const {cartItems, setCartItems} = useContext(CartContext)
-  // console.log("NavBar Cart", cartItems)
+  const [sidebarOpen, setSidebarOpen] = useState (false)
 
   // aumenta el length de cartWidget de acuerdo a la cantidad de productos
   const quantity = cartItems.reduce((acc,prod) => {
     return prod.cantidad + acc
   },0);
 
+  const menuSideBar = () => {
+    setSidebarOpen(!sidebarOpen)
+    console.log(sidebarOpen)
+  }
+  
+
   return (
     <nav className='NavbarContainer'>
         <div className="icon">
           <Link to="/xicelulares-Mazziotti"><InstallMobileIcon fontSize="large"/></Link>
-          <button className='btnNavbar'><MenuIcon/></button>
+          <button onClick ={menuSideBar} className='btnNavbar'>
+            {sidebarOpen ? <CloseIcon/> : <MenuIcon/>  }
+            </button>
+
           <p className='NavbarIcontext'>Xi Celulares</p>
         </div>        
         <ul className='NavbarList'>
@@ -37,5 +48,6 @@ import { CartContext } from '../../Context/CartContext';
     </nav>
   )
 }
+
 
 export default NavBar
