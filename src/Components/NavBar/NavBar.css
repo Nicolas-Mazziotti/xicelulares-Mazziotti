@@ -28,11 +28,7 @@
     margin: 0.5rem;
     color: black;
 }
-.NavbarList a :hover{
-    background-color: royalblue;
-    border-radius: 7px;
-    color: white
-}
+
 
 .icon{
     display: flex;
@@ -56,21 +52,22 @@
     text-decoration:none;
     border-style: none;
     width: 0;
-    visibility: hidden;
 }
+
+
 
 /*Media queries*/
 
-@media only screen and (max-width: 768px){
+/* @media only screen and (max-width: 768px){
     .NavbarContainer{
         justify-content: space-between;
+        z-index: -1;
     }
     .icon a{
         visibility: hidden;
-        
     }
     .icon p {
-        visibility: hidden;
+        display: none;
     }
     .btnNavbar{
         visibility: visible;
@@ -82,6 +79,5 @@
     .NavbarCart a {
         margin-right: 2rem;
     }
-
-}
+} */
 

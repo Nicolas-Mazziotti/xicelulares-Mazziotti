@@ -15,6 +15,7 @@ import { CartProvider } from './Context/CartContext';
 import Home from './Views/Home/Home';
 
 
+
 const App = () => {
   return (
     <CartProvider>
