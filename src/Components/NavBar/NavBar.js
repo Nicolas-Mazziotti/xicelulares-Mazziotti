@@ -27,29 +27,39 @@ import { ThemeProvider } from '@mui/private-theming';
   //   setSidebarOpen(!sidebarOpen)
   //   console.log(sidebarOpen)
   // }
-  const pages = ['Home', 'Celulares', 'Accesorios'];
+  const dataNavbar = [
+    {
+      id: 1, 
+      name: "Home",
+      link: "/xicelulares-Mazziotti",
+    
+    },
+    { 
+      id: 2,
+      name: "Celulares",
+      link: "/category/celulares",
+    },
+     {
+      id: 3,
+      name: "Accesorios",
+      link: "/category/accesorios",
+    }
+    ];
+  const links = ["/xicelulares-Mazziotti", "/category/celulares", "/category/accesorios"]
+  
   
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
   
     const handleOpenNavMenu = (event) => {
       setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
     };
   
     const handleCloseNavMenu = () => {
       setAnchorElNav(null);
     };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
-    
 
   return (
-        <AppBar position="static" sx={{backgroundColor:"black"}}>
+        <AppBar position="fixed" sx={{backgroundColor:"black"}}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <Link to="/xicelulares-Mazziotti"><InstallMobileIcon sx={{ color: "white"}}/></Link>
@@ -100,10 +110,10 @@ import { ThemeProvider } from '@mui/private-theming';
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{page}</Typography>
-                    </MenuItem>
+                  {dataNavbar.map((data) => (
+                    <MenuItem key={data.id} onClick={handleCloseNavMenu}>
+                     <Link to ={data.link}><Typography textAlign="center">{data.name}</Typography></Link>
+                    </MenuItem>       
                   ))}
                 </Menu>
               </Box>
@@ -126,14 +136,16 @@ import { ThemeProvider } from '@mui/private-theming';
                 Xi Celulares
               </Typography>
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                {pages.map((page) => (
-                  <Button
-                    key={page}
+                {dataNavbar.map((data) => (
+                  <Link to={data.link}>
+                    <Button
+                    key={data.id}
                     onClick={handleCloseNavMenu}
                     sx={{ my: 2, color: 'white', display: 'block' }}
-                  >
-                    {page}
-                  </Button>
+                    >
+                    {data.name}
+                    </Button>
+                  </Link>
                 ))}
               </Box>
               <div className='NavbarCart'>
