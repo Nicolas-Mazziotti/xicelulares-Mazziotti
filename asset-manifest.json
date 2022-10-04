@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/xicelulares-Mazziotti/static/css/main.810468b0.css",
-    "main.js": "/xicelulares-Mazziotti/static/js/main.025e3548.js",
+    "main.css": "/xicelulares-Mazziotti/static/css/main.97e9deb4.css",
+    "main.js": "/xicelulares-Mazziotti/static/js/main.6c7a50b4.js",
     "index.html": "/xicelulares-Mazziotti/index.html",
-    "main.810468b0.css.map": "/xicelulares-Mazziotti/static/css/main.810468b0.css.map",
-    "main.025e3548.js.map": "/xicelulares-Mazziotti/static/js/main.025e3548.js.map"
+    "main.97e9deb4.css.map": "/xicelulares-Mazziotti/static/css/main.97e9deb4.css.map",
+    "main.6c7a50b4.js.map": "/xicelulares-Mazziotti/static/js/main.6c7a50b4.js.map"
   },
   "entrypoints": [
-    "static/css/main.810468b0.css",
-    "static/js/main.025e3548.js"
+    "static/css/main.97e9deb4.css",
+    "static/js/main.6c7a50b4.js"
   ]
 }
