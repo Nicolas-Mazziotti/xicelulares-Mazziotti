@@ -54,30 +54,16 @@
     width: 0;
 }
 
+.menuNavbarDesktop {
+    text-decoration: none;
+}
+
+.menuNavbarMobile {
+    text-decoration: none;
+    color: black;
+}
 
 
-/*Media queries*/
 
-/* @media only screen and (max-width: 768px){
-    .NavbarContainer{
-        justify-content: space-between;
-        z-index: -1;
-    }
-    .icon a{
-        visibility: hidden;
-    }
-    .icon p {
-        display: none;
-    }
-    .btnNavbar{
-        visibility: visible;
-    }
-    .NavbarList{
-        visibility: hidden;
-        position: absolute;
-    }
-    .NavbarCart a {
-        margin-right: 2rem;
-    }
-} */
+
 

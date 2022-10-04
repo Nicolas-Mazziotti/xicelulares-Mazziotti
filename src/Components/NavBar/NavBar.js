@@ -3,12 +3,10 @@ import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget';
 import InstallMobileIcon from '@mui/icons-material/InstallMobile';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
-import {AppBar, Container, Toolbar, Typography, Box, IconButton, Menu, MenuItem, Button, Avatar, Tooltip} from '@mui/material';
-import AndroidIcon from '@mui/icons-material/Android';
-import { ThemeProvider } from '@mui/private-theming';
+import {AppBar, Container, Toolbar, Typography, Box, IconButton, Menu, MenuItem, Button} from '@mui/material';
+
 
 // import Sidebar from '../Sidebar/Sidebar';
 
@@ -16,17 +14,12 @@ import { ThemeProvider } from '@mui/private-theming';
  const NavBar = () => {
   // eslint-disable-next-line no-unused-vars
   const {cartItems, setCartItems} = useContext(CartContext)
-  // const [sidebarOpen, setSidebarOpen] = useState (false)
 
   // aumenta el length de cartWidget de acuerdo a la cantidad de productos
   const quantity = cartItems.reduce((acc,prod) => {
     return prod.cantidad + acc
   },0);
 
-  //  const menuSideBar = () => {
-  //   setSidebarOpen(!sidebarOpen)
-  //   console.log(sidebarOpen)
-  // }
   const dataNavbar = [
     {
       id: 1, 
@@ -45,9 +38,7 @@ import { ThemeProvider } from '@mui/private-theming';
       link: "/category/accesorios",
     }
     ];
-  const links = ["/xicelulares-Mazziotti", "/category/celulares", "/category/accesorios"]
-  
-  
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
   
     const handleOpenNavMenu = (event) => {
@@ -112,7 +103,7 @@ import { ThemeProvider } from '@mui/private-theming';
                 >
                   {dataNavbar.map((data) => (
                     <MenuItem key={data.id} onClick={handleCloseNavMenu}>
-                     <Link to ={data.link}><Typography textAlign="center">{data.name}</Typography></Link>
+                     <Link to ={data.link} className="menuNavbarMobile"><Typography textAlign="center">{data.name}</Typography></Link>
                     </MenuItem>       
                   ))}
                 </Menu>
@@ -131,13 +122,14 @@ import { ThemeProvider } from '@mui/private-theming';
                   letterSpacing: '.3rem',
                   color: 'inherit',
                   textDecoration: 'none',
+                  fontSize: 10,
                 }}
               >
                 Xi Celulares
               </Typography>
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent:'center' }}>
                 {dataNavbar.map((data) => (
-                  <Link to={data.link}>
+                  <Link to={data.link} className="menuNavbarDesktop">
                     <Button
                     key={data.id}
                     onClick={handleCloseNavMenu}
@@ -157,28 +149,5 @@ import { ThemeProvider } from '@mui/private-theming';
         </AppBar>
       );
     };
-    // <nav className='NavbarContainer'>
-    //     <div className="icon">
-    //       <Link to="/xicelulares-Mazziotti"><InstallMobileIcon fontSize="large"/></Link>
-    //       <button  className='btnNavbar'></button>
-  
-    //       {/* {sidebarOpen ? <Sidebar/> : null} */}
-          
-    //       <p className='NavbarIcontext'>Xi Celulares</p>
-    //     </div>        
-    //     <ul className='NavbarList'>
-    //         <Link to="/xicelulares-Mazziotti"><li>Home</li></Link>
-    //         <Link to="/category/celulares"><li>Celulares</li></Link>
-    //         <Link to="/category/accesorios"><li>Accesorios</li></Link>
-    //     </ul>
-        
-    //     <div className='NavbarCart'>
-    //       {/* {cartItems.length ? <Link to="/cart"><CartWidget/>{quantity}</Link> : <Link style = {{display:"none"}} to="/cart"><CartWidget/></Link> } */}
-    //     <Link to="/cart"><CartWidget/><span>{cartItems ? quantity : 0 } </span></Link>
-    //     </div>
-    // </nav>
-//   )
-
-
 
 export default NavBar

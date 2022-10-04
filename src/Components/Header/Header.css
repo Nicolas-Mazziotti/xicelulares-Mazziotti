@@ -7,3 +7,9 @@
 .headerContainer img{
     width: 100%;
 }
+
+@media only screen and (max-width: 768px){
+    .headerImg {
+        margin-top: 3rem;
+    }
+} 

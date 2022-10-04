@@ -5,7 +5,7 @@ import './Header.css'
 const Header = () => {
   return (
     <div className='headerContainer'>
-        <img src='/xicelulares-Mazziotti/Assets/header.jpg' alt='header'/>
+        <img src='/xicelulares-Mazziotti/Assets/header.jpg' alt='header' className='headerImg'/>
         <div className='headerTitulo'>
         <h1> Tienda Online Xiaomi</h1>
         </div>
